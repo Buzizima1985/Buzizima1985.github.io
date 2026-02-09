@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Digital Services Platform</title>
+  <title>Services for United States</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Online tools for managing digital activity and services.">
+  <meta name="description" content="Available digital services for users in the United States.">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,47 +14,52 @@
       padding: 0;
     }
     .container {
-      max-width: 520px;
-      margin: 60px auto;
+      max-width: 640px;
+      margin: 50px auto;
       padding: 20px;
       background: #ffffff;
       border-radius: 8px;
       box-shadow: 0 0 12px rgba(0,0,0,0.05);
     }
     h1 {
-      text-align: center;
-      font-size: 26px;
+      margin-bottom: 10px;
     }
     .subtitle {
-      text-align: center;
       color: #555;
+      margin-bottom: 30px;
     }
-    .card {
-      margin: 20px 0;
+    .offer {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 16px;
     }
-    .card ul {
-      padding-left: 18px;
+    .offer h3 {
+      margin: 0 0 6px 0;
     }
-    button {
-      width: 100%;
-      padding: 14px;
-      font-size: 16px;
+    .offer p {
+      margin: 0 0 10px 0;
+      color: #555;
+      font-size: 14px;
+    }
+    .offer a {
+      display: inline-block;
+      padding: 8px 14px;
       background: #2d6cdf;
       color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
     }
-    button:hover {
+    .offer a:hover {
       background: #1f57b8;
     }
-    .footer-text {
+    .footer {
+      margin-top: 30px;
       font-size: 12px;
-      color: #777;
       text-align: center;
-      margin-top: 16px;
     }
-    .footer-text a {
+    .footer a {
       color: #2d6cdf;
       text-decoration: none;
     }
@@ -62,35 +67,28 @@
 </head>
 <body>
 
-  <div class="container">
-    <h1>Digital Access Hub</h1>
-    <p class="subtitle">
-      A simple platform that provides access to online tools and third-party digital services.
-    </p>
+<div class="container">
+  <h1>Services for United States</h1>
+  <p class="subtitle">
+    Below is a list of available third-party digital services.
+  </p>
 
-    <div class="card">
-      <h2>What you get</h2>
-      <ul>
-        <li>Structured access to online resources</li>
-        <li>Step-by-step navigation</li>
-        <li>Clear usage information</li>
-      </ul>
-    </div>
-
-    <button id="continueBtn">Continue</button>
-
-    <p class="footer-text">
-      By continuing, you agree to our
-      <a href="#">Privacy Policy</a> and
-      <a href="#">Terms of Use</a>.
-    </p>
+  <div class="offer">
+    <h3>Service Platform</h3>
+    <p>Third-party digital solution available for selected users.</p>
+    <a href="#" target="_blank" rel="noopener">Open</a>
   </div>
 
-<script>
-  document.getElementById("continueBtn").addEventListener("click", function () {
-    alert("Button works correctly");
-  });
-</script>
+  <div class="offer">
+    <h3>Online Tool</h3>
+    <p>External platform providing access to digital features.</p>
+    <a href="#" target="_blank" rel="noopener">View</a>
+  </div>
+
+  <div class="footer">
+    <a href="../countries.html">Back to regions</a>
+  </div>
+</div>
 
 </body>
 </html>
