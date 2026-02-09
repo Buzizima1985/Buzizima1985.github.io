@@ -1,183 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Digital Access Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Access to regional digital services and third-party platforms.">
+<meta charset="UTF-8">
+<title>Digital Access Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Neutral informational platform providing access to regional digital services and third-party platforms.">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f7f9;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 760px;
-      margin: 60px auto;
-      padding: 24px;
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-    }
-    h1 { margin-top: 0; }
-    p { color: #555; }
-    .btn {
-      display: inline-block;
-      padding: 14px 26px;
-      background: #2d6cdf;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .btn:hover { background: #1f57b8; }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f7f9;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+h1 { margin-top: 0; }
+.hidden { display: none; }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .card {
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      padding: 16px;
-      cursor: pointer;
-    }
-    .card:hover {
-      background: #f0f4ff;
-    }
-    .card h3 {
-      margin: 0 0 6px 0;
-    }
-    .card p {
-      margin: 0;
-      font-size: 14px;
-    }
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 12px;
+}
 
-    .offer {
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      padding: 16px;
-      margin-bottom: 16px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
 
-    .hidden { display: none; }
+.card {
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 8px;
+}
 
-    .footer {
-      margin-top: 30px;
-      font-size: 12px;
-      color: #777;
-      text-align: center;
-    }
-  </style>
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back {
+  margin-top: 30px;
+  display: inline-block;
+  color: #2563eb;
+  cursor: pointer;
+}
+.footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #666;
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="container" id="page-main">
+  <h1>Digital Access Hub</h1>
+  <p>A neutral informational platform providing access to regional digital services and third-party solutions.</p>
+  <a class="button" onclick="showPage('countries')">Continue</a>
+  <div class="footer">Informational access only. No guarantees provided.</div>
+</div>
 
-  <!-- MAIN -->
-  <div id="page-main">
-    <h1>Digital Access Hub</h1>
-    <p>
-      A neutral informational platform providing access to regional
-      digital services and third-party solutions.
-    </p>
-    <div style="margin-top:30px;">
-      <span class="btn" onclick="showPage('countries')">Continue</span>
-    </div>
-    <div class="footer">
-      Informational access only. No guarantees provided.
-    </div>
+<div class="container hidden" id="page-countries">
+  <h1>Select Your Region</h1>
+  <p>Choose your country to view available digital services.</p>
+
+  <div class="grid">
+    <div class="card"><strong>United States</strong><br><a onclick="showOffers('us')">View</a></div>
+    <div class="card"><strong>United Kingdom</strong><br><a onclick="showOffers('uk')">View</a></div>
+    <div class="card"><strong>Germany</strong><br><a onclick="showOffers('de')">View</a></div>
+    <div class="card"><strong>Canada</strong><br><a onclick="showOffers('ca')">View</a></div>
+    <div class="card"><strong>Bangladesh</strong><br><a onclick="showOffers('bd')">View</a></div>
+    <div class="card"><strong>Nigeria</strong><br><a onclick="showOffers('ng')">View</a></div>
+    <div class="card"><strong>Pakistan</strong><br><a onclick="showOffers('pk')">View</a></div>
+    <div class="card"><strong>Bulgaria</strong><br><a onclick="showOffers('bg')">View</a></div>
   </div>
 
-  <!-- COUNTRIES -->
-  <div id="page-countries" class="hidden">
-    <h1>Select Your Region</h1>
-    <p>Choose your country to view available digital services.</p>
+  <div class="back" onclick="showPage('main')">← Back</div>
+</div>
 
-    <div class="grid">
-      <div class="card" onclick="showOffers('usa')">
-        <h3>United States</h3><p>Services for US users</p>
-      </div>
-      <div class="card" onclick="showOffers('uk')">
-        <h3>United Kingdom</h3><p>Platforms for UK residents</p>
-      </div>
-      <div class="card" onclick="showOffers('germany')">
-        <h3>Germany</h3><p>EU-based digital services</p>
-      </div>
-      <div class="card" onclick="showOffers('canada')">
-        <h3>Canada</h3><p>Services for Canada</p>
-      </div>
-      <div class="card" onclick="showOffers('bangladesh')">
-        <h3>Bangladesh</h3><p>Regional access</p>
-      </div>
-      <div class="card" onclick="showOffers('nigeria')">
-        <h3>Nigeria</h3><p>Local platforms</p>
-      </div>
-      <div class="card" onclick="showOffers('pakistan')">
-        <h3>Pakistan</h3><p>Supported services</p>
-      </div>
-      <div class="card" onclick="showOffers('bulgaria')">
-        <h3>Bulgaria</h3><p>EU regional services</p>
-      </div>
-    </div>
-
-    <div class="footer">
-      <span class="btn" onclick="showPage('main')">Back</span>
-    </div>
-  </div>
-
-  <!-- OFFERS -->
-  <div id="page-offers" class="hidden">
-    <h1 id="offers-title"></h1>
-    <p>Available third-party digital services.</p>
-
-    <div class="offer">
-      <h3>Service Platform</h3>
-      <p>Third-party digital solution available for selected users.</p>
-      <a class="btn" href="#" target="_blank" rel="noopener">Open</a>
-    </div>
-
-    <div class="offer">
-      <h3>Online Tool</h3>
-      <p>External platform providing access to digital features.</p>
-      <a class="btn" href="#" target="_blank" rel="noopener">View</a>
-    </div>
-
-    <div class="footer">
-      <span class="btn" onclick="showPage('countries')">Back to regions</span>
-    </div>
-  </div>
-
+<div class="container hidden" id="page-offers">
+  <h1 id="offers-title"></h1>
+  <p>External platforms and third-party services available for this region.</p>
+  <div class="grid" id="offers-list"></div>
+  <div class="back" onclick="showPage('countries')">← Back</div>
 </div>
 
 <script>
-  function showPage(page) {
-    document.getElementById('page-main').classList.add('hidden');
-    document.getElementById('page-countries').classList.add('hidden');
-    document.getElementById('page-offers').classList.add('hidden');
+const data = {
+us: [
+"71508","74150","73922","74092","71659","74090","71658","73725","74032"
+],
+uk: [
+"72853","73920","73007","73942","73787","73720","73786"
+],
+de: [
+"73906","73916","71593","70951","69974","73895","72176","72849"
+],
+bd: [
+"54747","54746","36521"
+],
+ca: [
+"73002","69665","73914","74037","69339","71850","73394","72819","73744","74036","63051","73003"
+],
+ng: [
+"36518","70075","63319","63318","57893","59807","56776"
+],
+pk: [
+"59478","65522","71995","59479","59477"
+],
+bg: [
+"73990","74022","73945","73989","73988"
+]
+};
 
-    document.getElementById('page-' + page).classList.remove('hidden');
-  }
+function showPage(p) {
+  document.getElementById('page-main').classList.add('hidden');
+  document.getElementById('page-countries').classList.add('hidden');
+  document.getElementById('page-offers').classList.add('hidden');
+  document.getElementById('page-' + p).classList.remove('hidden');
+}
 
-  function showOffers(country) {
-    const titles = {
-      usa: 'Services for United States',
-      uk: 'Services for United Kingdom',
-      germany: 'Services for Germany',
-      canada: 'Services for Canada',
-      bangladesh: 'Services for Bangladesh',
-      nigeria: 'Services for Nigeria',
-      pakistan: 'Services for Pakistan',
-      bulgaria: 'Services for Bulgaria'
-    };
-    document.getElementById('offers-title').innerText = titles[country];
-    showPage('offers');
-  }
+function showOffers(c) {
+  const titles = {
+    us: "Services for United States",
+    uk: "Services for United Kingdom",
+    de: "Services for Germany",
+    ca: "Services for Canada",
+    bd: "Services for Bangladesh",
+    ng: "Services for Nigeria",
+    pk: "Services for Pakistan",
+    bg: "Services for Bulgaria"
+  };
+  document.getElementById('offers-title').innerText = titles[c];
+  const list = document.getElementById('offers-list');
+  list.innerHTML = "";
+  data[c].forEach(id => {
+    list.innerHTML += `
+      <div class="card">
+        <strong>External Platform</strong>
+        <p>Third-party digital service</p>
+        <a href="https://singingfiles.com/show.php?l=0&u=2495941&id=${id}" target="_blank" rel="noopener">Open</a>
+      </div>`;
+  });
+  showPage('offers');
+}
 </script>
 
 </body>
